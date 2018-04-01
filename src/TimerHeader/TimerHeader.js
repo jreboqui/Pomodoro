@@ -8,6 +8,6 @@ const TimerHeader = () => (
     <h2 className="text-center" style={{ paddingLeft:'20px'}}>What the hell is CSS!</h2>
     </Row>
 );
-###hmmmm
+
 export default TimerHeader;
 

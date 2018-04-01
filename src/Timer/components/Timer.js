@@ -17,9 +17,17 @@ export class Timer extends React.Component
             currentTime: moment.duration(25, 'minutes'),
             baseTime: moment.duration(25, 'minutes'),
         };
+
+        this.setBaseTime = this.setBaseTime.bind(this);
     }
 
-    
+
+    setBaseTime(newBaseTime) {
+        this.setState({
+            baseTime: newBaseTime,
+            currentTime: newBaseTime
+        });
+    }
     render () {
     return (
         <Grid>
@@ -27,7 +35,10 @@ export class Timer extends React.Component
                 <TimerHeader />
                 <TimerDisplay currentTime={this.state.currentTime}/>
                 <TimerButton />
-                <TimerConfig />
+                <TimerConfig 
+                    baseTime={this.state.baseTime}
+                    setBaseTime={this.setBaseTime}
+                />
             </div>
         </Grid>
                 )
